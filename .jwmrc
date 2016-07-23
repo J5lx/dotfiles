@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<JWM>
+    <!-- The root menu. -->
+    <RootMenu onroot="12">
+        <Program icon="terminal.png" label="Terminology">terminology</Program>
+        <Program icon="vivaldi-snapshot.png" label="Vivaldi Snapshot">vivaldi-snapshot</Program>
+        <Menu icon="folder.png" label="Applications">
+            <Program icon="music.png" label="Audacious">audacious</Program>
+            <Program icon="calculator.png" label="Calculator">xcalc</Program>
+            <Program icon="gimp.png" label="Gimp">gimp</Program>
+            <Program icon="www.png" label="Iceweasel">iceweasel</Program>
+            <Program icon="editor.png" label="XEdit">xedit</Program>
+        </Menu>
+        <Menu icon="folder.png" label="Utilities">
+            <Program icon="font.png" label="Fonts">xfontsel</Program>
+            <Program icon="window.png" label="Window Properties">
+                xprop | xmessage -file -
+            </Program>
+        </Menu>
+        <Separator/>
+        <Program icon="lock.png" label="Lock">
+            xscreensaver-command -lock
+        </Program>
+        <Separator/>
+        <Restart label="Restart" icon="system-restart.png"/>
+        <Exit label="Exit" confirm="true" icon="exit.png"/>
+    </RootMenu>
+
+    <!-- Options for program groups. -->
+    <Group>
+        <Class>Pidgin</Class>
+        <Option>sticky</Option>
+    </Group>
+    <Group>
+        <Name>xterm</Name>
+        <Option>vmax</Option>
+        <Option>icon:terminal.png</Option>
+    </Group>
+    <Group>
+        <Name>xedit</Name>
+        <Option>icon:editor.png</Option>
+    </Group>
+    <Group>
+        <Name>xcalc</Name>
+        <Option>icon:calculator.png</Option>
+    </Group>
+
+    <!-- Tray at the bottom. -->
+    <Tray x="0" y="0" autohide="off" height="32">
+
+        <TrayButton popup="Menu" icon="archlinux.png">root:1</TrayButton>
+        <!--TrayButton label="_">showdesktop</TrayButton-->
+
+        <!--Pager labeled="true"/-->
+
+        <TaskList maxwidth="256"/>
+
+        <Dock/>
+        <Swallow name="jload">jload -geometry 24x24 -update 1 -bg \#454649</Swallow>
+        <Clock format="%T"><Button mask="123">exec:xclock</Button></Clock>
+
+    </Tray>
+
+    <!-- Visual Styles -->
+    <WindowStyle decorations="flat">
+        <Font>M+ 2p-10:bold</Font>
+        <Width>2</Width>
+        <Height>24</Height>
+        <Corner>3</Corner>
+        <Foreground>#868686</Foreground>
+        <Background>#4f5154:#454649</Background>
+        <Opacity>1.0</Opacity>
+        <Active>
+            <Foreground>#f3f3f5</Foreground>
+            <Background>#4f5154:#454649</Background>
+        </Active>
+    </WindowStyle>
+    <TrayStyle>
+        <Font>M+ 2p-10</Font>
+        <Background>#454649</Background>
+        <Foreground>#f3f3f5</Foreground>
+        <Active>
+            <Background>#2b2b2c</Background>
+        </Active>
+    </TrayStyle>
+    <PagerStyle>
+        <Outline>#000000</Outline>
+        <Foreground>#333333</Foreground>
+        <Background>#999999</Background>
+        <Active>
+            <Foreground>#0077CC</Foreground>
+            <Background>#555555</Background>
+        </Active>
+    </PagerStyle>
+    <MenuStyle>
+        <Font>M+ 2p-10</Font>
+        <Foreground>#f3f3f5</Foreground>
+        <Background>#262627</Background>
+        <Outline>#171819</Outline>
+        <Active>
+            <Foreground>#ffffff</Foreground>
+            <Background>#3966bc:3d77e6</Background>
+        </Active>
+    </MenuStyle>
+    <PopupStyle>
+        <Font>M+ 2p-10</Font>
+        <Foreground>#ffffff</Foreground>
+        <Background>#000000</Background>
+    </PopupStyle>
+
+    <!-- Path where icons can be found.
+         IconPath can be listed multiple times to allow searching
+         for icons in multiple paths.
+      -->
+    <IconPath>/usr/share/icons/Moka/32x32/apps</IconPath>
+    <IconPath>/usr/share/icons/Moka/32x32/actions</IconPath>
+    <IconPath>/usr/share/icons/Moka/32x32/places</IconPath>
+    <IconPath>/usr/share/icons/Moka/32x32/mimetypes</IconPath>
+    <IconPath>/usr/share/icons/hicolor/32x32/apps</IconPath>
+    <IconPath>/usr/share/icons/hicolor/32x32/actions</IconPath>
+    <IconPath>/usr/share/icons/hicolor/32x32/places</IconPath>
+    <IconPath>/usr/share/icons/hicolor/32x32/mimetypes</IconPath>
+    <IconPath>/usr/share/icons/wm-icons/32x32-gant</IconPath>
+
+    <!-- Virtual Desktops -->
+    <!-- Desktop tags can be contained within Desktops for desktop names. -->
+    <Desktops width="2" height="3">
+        <!-- Default background. Note that a Background tag can be
+              contained within a Desktop tag to give a specific background
+              for that desktop.
+         -->
+        <Background type="image">/home/jakob/Bilder/Forever_by_Shady_S.jwm.jpg</Background>
+    </Desktops>
+
+    <!-- Double click speed (in milliseconds) -->
+    <DoubleClickSpeed>400</DoubleClickSpeed>
+
+    <!-- Double click delta (in pixels) -->
+    <DoubleClickDelta>2</DoubleClickDelta>
+
+    <!-- The focus model (sloppy or click) -->
+    <FocusModel>click</FocusModel>
+
+    <!-- The snap mode (none, screen, or border) -->
+    <SnapMode distance="10">border</SnapMode>
+
+    <!-- The move mode (outline or opaque) -->
+    <MoveMode coordinates="window" delay="300">opaque</MoveMode>
+
+    <!-- The resize mode (outline or opaque) -->
+    <ResizeMode coordinates="window">opaque</ResizeMode>
+    
+    <StartupCommand>qjackctl</StartupCommand>
+    <StartupCommand>xcompmgr</StartupCommand>
+    <StartupCommand>fcitx</StartupCommand>
+    <StartupCommand>xscreensaver -no-splash</StartupCommand>
+
+    <!-- Key bindings -->
+    <Key key="Up">up</Key>
+    <Key key="Down">down</Key>
+    <Key key="Right">right</Key>
+    <Key key="Left">left</Key>
+    <Key key="h">left</Key>
+    <Key key="j">down</Key>
+    <Key key="k">up</Key>
+    <Key key="l">right</Key>
+    <Key key="Return">select</Key>
+    <Key key="Escape">escape</Key>
+    <Key key="XF86AudioLowerVolume">exec:amixer set Master 5%-</Key>
+    <Key key="XF86AudioRaiseVolume">exec:amixer set Master 5%+</Key>
+    <Key key="XF86AudioMute">exec:amixer set Master toggle</Key>
+
+    <Key mask="A" key="Tab">nextstacked</Key>
+    <Key mask="CA" key="X">close</Key>
+    <Key mask="A" key="F#">desktop#</Key>
+    <Key          key="Menu">root:1</Key>
+    <Key mask="A" key="Menu">window</Key>
+    <Key mask="CA" key="N">maximize</Key>
+    <Key mask="CA" key="F">fullscreen</Key>
+    <Key mask="4" key="Left">maxleft</Key>
+    <Key mask="4" key="Right">maxright</Key>
+    <Key mask="A" key="Right">rdesktop</Key>
+    <Key mask="A" key="Left">ldesktop</Key>
+    <Key mask="A" key="Up">udesktop</Key>
+    <Key mask="A" key="Down">ddesktop</Key>
+    <Key mask="CA" key="Insert">exec:terminology</Key>
+    <Key mask="CA" key="H">exec:terminology -e ghci</Key>
+    <Key mask="CA" key="O">exec:terminology -e utop</Key>
+    <Key mask="CA" key="P">exec:terminology -e /home/jakob/.composer/vendor/bin/psysh</Key>
+    <!--Key mask="CS12" key="P">exec:terminology -e python</Key-->
+    <Key mask="CA" key="End">restart</Key>
+</JWM>

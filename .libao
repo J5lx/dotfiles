@@ -1,0 +1,3 @@
+default_driver=jack
+client_name=libao JACK plugin
+ports=system:playback_1,system:playback_2

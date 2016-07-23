@@ -1,0 +1,4 @@
+[general]
+drivers=jack,alsa,
+[pulse]
+allow-moves=true

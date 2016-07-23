@@ -1,0 +1,30 @@
+[user]
+	email = j5lx@fmail.co.uk
+	name = Jakob Gahde
+	signingkey = BA1BC85D
+[credential]
+	helper = cache
+[url "https://chromium.googlesource.com/a/"]
+	insteadOf = https://chromium.googlesource.com/
+	insteadOf = https://chromium.googlesource.com/a/
+[color]
+	ui = true
+[merge]
+	tool = diffuse
+[core]
+	editor = joe
+	pager = less
+[push]
+	default = simple
+[diff]
+	guitool = meld
+	tool = icdiff
+[difftool]
+[diff "tool.icdiff"]
+	cmdline = /usr/bin/icdiff --highlight --line-numbers --whole-file
+[difftool "icdiff"]
+	cmd = icdiff --highlight --line-numbers --whole-file $LOCAL $REMOTE | less -R
+[http]
+	cookiefile = /home/jakob/.gitcookies
+[commit]
+	gpgsign = true

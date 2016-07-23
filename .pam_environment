@@ -1,0 +1,57 @@
+### Programs
+
+# Compilers etc.
+CC=clang
+CXX=clang++
+CCACHE_CPP2=1
+# CLI editor
+EDITOR=joe
+# GUI editor
+VISUAL=joe
+# Self-explaining
+PAGER=less
+
+### Paths
+
+# Location of FreePascal sources - needed by some build tools
+FPCDIR=/usr/lib/fpc/src
+# Location of sound plugins
+DSSI_PATH=/home/jakob/Documents/sounds/dssi:/usr/lib/dssi
+LADSPA_PATH=/home/jakob/Documents/sounds/ladspa:/usr/lib/ladspa:/usr/lib/lmms/ladspa/
+VST_PATH=/home/jakob/Documents/sounds/vst:/usr/lib/vst
+
+### User Interface Configuration
+
+# Use gtk3 interface for LibreOffice
+SAL_USE_VCLPLUGIN=gtk3
+# Use GTK style in Qt5 (in previous options this is a configuration option)
+QT_STYLE_OVERRIDE=GTK+
+# Use anti-aliasing in Java programs
+_JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
+# Disable annoying GTK overlay scrollbars
+GTK_OVERLAY_SCROLLING=0
+# Enable experimental pixel-precise smooth scrolling in Firefox
+MOZ_USE_XINPUT2=1
+# Use fcitx as IME
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+ECORE_IMF_MODULE=xim
+XMODIFIERS=@im=fcitx
+
+### Library Configuration
+
+# Disable Steam runtime - drastically reduces launch times at the cost of some
+# occasional incompatabilities
+STEAM_RUNTIME=0
+# Make sure system-wide SDL2 is used whenever possible
+SDL_DYNAMIC_API=/usr/lib/libSDL2.so
+
+### Miscellaneous
+
+# I need XDebug for development, so I don't need Composer to tell me that it
+# slows PHP down
+COMPOSER_DISABLE_XDEBUG_WARN=1
+# Self-explaining
+GPGKEY=BA1BC85D
+# Used by makepkg IIRC
+PACKAGER="Jakob Gahde <j5lx@fmail.co.uk>"
