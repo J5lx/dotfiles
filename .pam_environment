@@ -24,8 +24,9 @@ VST_PATH=/home/jakob/Documents/sounds/vst:/usr/lib/vst
 
 # Use gtk3 interface for LibreOffice
 SAL_USE_VCLPLUGIN=gtk3
-# Use GTK style in Qt5 (in previous options this is a configuration option)
-QT_STYLE_OVERRIDE=GTK+
+# Use GTK style in Qt5 (in previous versions this is a configuration option)
+# Requires qt5-styleplugins to be installed
+QT_STYLE_OVERRIDE=gtk2
 # Use anti-aliasing in Java programs
 _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
 # Disable annoying GTK overlay scrollbars
