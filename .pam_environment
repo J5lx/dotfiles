@@ -10,6 +10,7 @@ EDITOR=joe
 VISUAL=joe
 # Self-explaining
 PAGER=less
+BROWSER=chromium
 
 ### Paths
 
