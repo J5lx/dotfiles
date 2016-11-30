@@ -32,6 +32,8 @@ QT_STYLE_OVERRIDE=gtk2
 _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
 # Disable annoying GTK overlay scrollbars
 GTK_OVERLAY_SCROLLING=0
+# Disable Ubuntu menu proxy
+UBUNTU_MENUPROXY=0
 # Enable experimental pixel-precise smooth scrolling in Firefox
 MOZ_USE_XINPUT2=1
 # Use fcitx as IME
@@ -55,5 +57,7 @@ SDL_DYNAMIC_API=/usr/lib/libSDL2.so
 COMPOSER_DISABLE_XDEBUG_WARN=1
 # Self-explaining
 GPGKEY=BA1BC85D
+# Self-explaining
+IRCNICK=J5lx
 # Used by makepkg IIRC
 PACKAGER="Jakob Gahde <j5lx@fmail.co.uk>"

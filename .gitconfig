@@ -28,3 +28,9 @@
 	cookiefile = /home/jakob/.gitcookies
 [commit]
 	gpgsign = true
+[url "git@github.com:"]
+	insteadof = gh:
+[url "aur@aur.archlinux.org:"]
+	insteadof = aur:
+[url "dev@j5lx.eu:source/"]
+	insteadof = j5:
