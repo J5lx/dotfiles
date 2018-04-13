@@ -1,63 +1,65 @@
 ### Programs
 
 # Compilers etc.
-CC=clang
-CXX=clang++
-CCACHE_CPP2=1
+CC DEFAULT="clang"
+CXX DEFAULT="clang++"
+CCACHE_CPP2 DEFAULT=1
 # CLI editor
-EDITOR=joe
+EDITOR DEFAULT="joe"
 # GUI editor
-VISUAL=joe
+VISUAL DEFAULT="joe"
 # Self-explaining
-PAGER=less
-BROWSER=chromium
+PAGER DEFAULT="less"
+BROWSER DEFAULT="chromium"
 
 ### Paths
 
+# Self-explaining.
+PATH DEFAULT="@{HOME}/.composer/vendor/bin:@{HOME}/.local/bin"
 # Location of FreePascal sources - needed by some build tools
-FPCDIR=/usr/lib/fpc/src
+FPCDIR DEFAULT="/usr/lib/fpc/src"
 # Location of sound plugins
-DSSI_PATH=/home/jakob/Documents/sounds/dssi:/usr/lib/dssi
-LADSPA_PATH=/home/jakob/Documents/sounds/ladspa:/usr/lib/ladspa:/usr/lib/lmms/ladspa/
-VST_PATH=/home/jakob/Documents/sounds/vst:/usr/lib/vst
+DSSI_PATH DEFAULT="@{HOME}/Documents/audio/sounds/dssi:/usr/lib/dssi"
+LADSPA_PATH DEFAULT="@{HOME}/Documents/audio/sounds/ladspa:/usr/lib/ladspa:/usr/lib/lmms/ladspa/"
+VST_PATH DEFAULT="@{HOME}/Documents/audio/sounds/vst:/usr/lib/vst"
 
 ### User Interface Configuration
 
 # Use gtk3 interface for LibreOffice
-SAL_USE_VCLPLUGIN=gtk3
+SAL_USE_VCLPLUGIN DEFAULT="gtk3"
 # Use GTK style in Qt5 (in previous versions this is a configuration option)
 # Requires qt5-styleplugins to be installed
-QT_STYLE_OVERRIDE=gtk2
-# Use anti-aliasing in Java programs
-_JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
+QT_STYLE_OVERRIDE DEFAULT="gtk2"
+# Use GTK+ Look and Feel and anti-aliasing in Java programs
+_JAVA_OPTIONS DEFAULT="-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
 # Disable annoying GTK overlay scrollbars
-GTK_OVERLAY_SCROLLING=0
+GTK_OVERLAY_SCROLLING DEFAULT=0
 # Disable Ubuntu menu proxy
-UBUNTU_MENUPROXY=0
+UBUNTU_MENUPROXY DEFAULT=0
 # Enable experimental pixel-precise smooth scrolling in Firefox
-MOZ_USE_XINPUT2=1
+MOZ_USE_XINPUT2 DEFAULT=1
 # Use fcitx as IME
-GTK_IM_MODULE=fcitx
-QT_IM_MODULE=fcitx
-ECORE_IMF_MODULE=xim
-XMODIFIERS=@im=fcitx
+GTK_IM_MODULE DEFAULT="fcitx"
+QT_IM_MODULE DEFAULT="fcitx"
+ECORE_IMF_MODULE DEFAULT="xim"
+XMODIFIERS DEFAULT="\@im=fcitx"
 
 ### Library Configuration
 
 # Disable Steam runtime - drastically reduces launch times at the cost of some
 # occasional incompatabilities
-STEAM_RUNTIME=0
+STEAM_RUNTIME DEFAULT=0
 # Make sure system-wide SDL2 is used whenever possible
-SDL_DYNAMIC_API=/usr/lib/libSDL2.so
+SDL_DYNAMIC_API DEFAULT="/usr/lib/libSDL2.so"
 
 ### Miscellaneous
 
 # I need XDebug for development, so I don't need Composer to tell me that it
 # slows PHP down
-COMPOSER_DISABLE_XDEBUG_WARN=1
+COMPOSER_DISABLE_XDEBUG_WARN DEFAULT=1
 # Self-explaining
-GPGKEY=BA1BC85D
+GPGKEY DEFAULT="BA1BC85D"
 # Self-explaining
-IRCNICK=J5lx
+IRCNICK DEFAULT="J5lx"
 # Used by makepkg IIRC
-PACKAGER="Jakob Gahde <j5lx@fmail.co.uk>"
+PACKAGER DEFAULT="Jakob Gahde <j5lx\@fmail.co.uk>"

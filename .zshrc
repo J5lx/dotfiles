@@ -61,8 +61,5 @@ RPS2=$'%F{magenta}[%F{cyan}…%F{magenta}]%f'
 alias ls='ls -1h --color --group-directories-first'
 alias rldc='rdmd --compiler=ldc'
 
-# ~/.local/bin is used by Haxelib IIRC
-export PATH=/home/jakob/Documents/software/j5lx-build:/home/jakob/.composer/vendor/bin:/home/jakob/.local/bin:${PATH}
-
 # OPAM configuration
 . /home/jakob/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
