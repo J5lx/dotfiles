@@ -1,4 +1,4 @@
-gtk-theme-name="Adapta-Nokto"
-gtk-icon-theme-name="Moka"
-gtk-fallback-icon-theme="Moka"
+gtk-theme-name="Arc-Dark"
+gtk-icon-theme-name="Arc"
+gtk-fallback-icon-theme="Adwaita"
 gtk-cursor-theme-name="Vanilla-DMZ-AA"

@@ -14,14 +14,16 @@ BROWSER DEFAULT="chromium"
 
 ### Paths
 
-# Self-explaining.
-PATH DEFAULT="@{HOME}/.composer/vendor/bin:@{HOME}/.local/bin"
+# Location of Android SDK
+ANDROID_HOME DEFAULT="@{HOME}/.android-sdk"
 # Location of FreePascal sources - needed by some build tools
 FPCDIR DEFAULT="/usr/lib/fpc/src"
 # Location of sound plugins
 DSSI_PATH DEFAULT="@{HOME}/Documents/audio/sounds/dssi:/usr/lib/dssi"
 LADSPA_PATH DEFAULT="@{HOME}/Documents/audio/sounds/ladspa:/usr/lib/ladspa:/usr/lib/lmms/ladspa/"
 VST_PATH DEFAULT="@{HOME}/Documents/audio/sounds/vst:/usr/lib/vst"
+# Add Android SDK, composer and systemd per-user executable paths to PATH
+PATH DEFAULT="@{HOME}/.local/bin:@{HOME}/.config/composer/vendor/bin"
 
 ### User Interface Configuration
 
@@ -29,9 +31,11 @@ VST_PATH DEFAULT="@{HOME}/Documents/audio/sounds/vst:/usr/lib/vst"
 SAL_USE_VCLPLUGIN DEFAULT="gtk3"
 # Use GTK style in Qt5 (in previous versions this is a configuration option)
 # Requires qt5-styleplugins to be installed
-QT_STYLE_OVERRIDE DEFAULT="gtk2"
+QT_QPA_PLATFORMTHEME DEFAULT="gtk2"
 # Use GTK+ Look and Feel and anti-aliasing in Java programs
-_JAVA_OPTIONS DEFAULT="-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
+_JAVA_OPTIONS DEFAULT="-Dswing.systemlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dlog4j.configuration=file://@{HOME}/.log4j.properties"
+# Have SWT not use GTK3 to avoid crashes in Eclipse
+SWT_GTK3 DEFAULT=0
 # Disable annoying GTK overlay scrollbars
 GTK_OVERLAY_SCROLLING DEFAULT=0
 # Disable Ubuntu menu proxy
@@ -50,16 +54,22 @@ XMODIFIERS DEFAULT="\@im=fcitx"
 # occasional incompatabilities
 STEAM_RUNTIME DEFAULT=0
 # Make sure system-wide SDL2 is used whenever possible
-SDL_DYNAMIC_API DEFAULT="/usr/lib/libSDL2.so"
+# Disabled: Breaks Steam browser
+# SDL_DYNAMIC_API DEFAULT="/usr/lib/libSDL2.so"
 
 ### Miscellaneous
 
 # I need XDebug for development, so I don't need Composer to tell me that it
 # slows PHP down
 COMPOSER_DISABLE_XDEBUG_WARN DEFAULT=1
+# Don't quote ls output
+QUOTING_STYLE DEFAULT=literal
 # Self-explaining
 GPGKEY DEFAULT="BA1BC85D"
 # Self-explaining
 IRCNICK DEFAULT="J5lx"
 # Used by makepkg IIRC
 PACKAGER DEFAULT="Jakob Gahde <j5lx\@fmail.co.uk>"
+# Use GPG SSH agent
+SSH_AGENT_PID DEFAULT=
+SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
